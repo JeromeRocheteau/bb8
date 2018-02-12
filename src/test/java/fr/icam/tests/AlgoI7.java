@@ -1,5 +1,7 @@
 package fr.icam.tests;
 
+import java.util.Scanner;
+
 import org.junit.Test;
 
 public class AlgoI7 {
@@ -53,6 +55,7 @@ public class AlgoI7 {
 	void display() {
 		head();
 		board();
+		System.out.print("\n");
 	}
 	
 	void play(int i, int j, state next) {
@@ -70,6 +73,77 @@ public class AlgoI7 {
 	public void test01() {
 		init();
 		display();
+		play(1, 1, state.Cross);
+		display();
+		play(0, 0, state.Nought);
+		display();
+		play(2, 2, state.Cross);
+		display();
+		play(0, 2, state.Nought);
+		display();
+		play(0, 1, state.Cross);
+		display();
+		play(2, 1, state.Nought);
+		display();
+		play(1, 0, state.Cross);
+		display();
+		play(2, 0, state.Nought);
+		display();
+		play(1, 2, state.Cross);
+		display();
 	}
-		
+
+	/** Améliorez l'algorithme test02 afin qu'il détecte automatiquement 
+	 *  quand une partie est terminée. 
+	 */
+
+	class move {
+		int x;
+		int y;
+		state s;
+	}
+	
+	move read(boolean cross) throws Exception {
+		move m = new move();
+		m.s = cross ? state.Cross : state.Nought;	
+		System.out.println("player: " + (cross ? "x" : "o"));
+		System.out.print("row: ");
+		m.x = scanner.nextInt();
+		System.out.print("col: ");
+		m.y = scanner.nextInt();
+		return m;
+	}
+	
+	boolean apply(move m) {
+		if (0 <= m.x && m.x < 3) {
+			if (0 <= m.y && m.y < 3) {
+				state s = tictactoe[m.x][m.y];
+				if (s == null) {
+					tictactoe[m.x][m.y] = m.s;
+					return true;
+				}
+			}	
+		}
+		return false;
+	}
+	
+	Scanner scanner;
+	
+	@Test
+	public void test02() throws Exception {
+		scanner = new Scanner(System.in);
+		int n = 0;
+		init();
+		display();
+		while (n < 9) {
+			move m = read(n % 2 == 0);
+			boolean incr = apply(m);
+			if (incr) {
+				n++;
+			}
+			display();
+		}
+		scanner.close();
+	}
+	
 }
