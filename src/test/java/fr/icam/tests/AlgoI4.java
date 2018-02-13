@@ -13,6 +13,9 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test01 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>while ( ... ) { ... }</code> : que signifie cette instruction ?
+	 *  3. <code>i < 5</code> : que signifie cette expression ?
+	 *  4. <code>i++</code> : que signifie cette expression/instruction ?
 	 */
 	@Test
 	public void test01() {
@@ -26,6 +29,9 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test02 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. l'aglorithm test02 est-il équivalent à l'algorithme test01 ?
+	 *  3. <code>for ( ... ) { ... }</code> : que signifie cette instruction ?
+	 *  4. <code>int i = 0; i < 5; i++</code> : que signifie ces instructions/expressions ?
 	 */
 	@Test
 	public void test02() {
@@ -37,6 +43,9 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test03 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. l'aglorithm test03 est-il équivalent aux algorithmes test01 et test02 ?
+	 *  3. quelle différence d'utilisation y a-t-il entre les instructions 
+	 *      <code>while (...) { ... }</code> et <code>do { ... } while (...)</code> ? 
 	 */
 	@Test
 	public void test03() {
@@ -50,23 +59,26 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test04 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. l'aglorithm test04 est-il équivalent aux algorithmes test01, test02 et test03 ?
+	 *  3. <code>void recursive(int i)</code> : à quoi correspond cette procédure ?
+	 *  4. pourquoi s'agit-il d'une procédure dite récursive ? 
 	 */
 	
-	void recursive(int i, int limit) {
-		if (i < limit) {
+	void recursive(int i) {
+		if (i < 5) {
 			System.out.println((i + 1) + "-th iteration");
-			recursive(i + 1, limit);
+			recursive(i + 1);
 		}
 	}
 	
 	@Test
 	public void test04() {
 		int i = 0;
-		recursive(i, 5);
+		recursive(i);
 	}
 
 	/** Complétez l'algorithme test05 afin qu'il calcule 
-	 * la somme des 10 premiers nombres entiers naturels. 
+	 *  la somme des 10 premiers nombres entiers naturels. 
 	 */
 	@Test
 	public void test05() {

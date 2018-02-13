@@ -150,11 +150,11 @@ public class AlgoI1 {
 	}
 	
 	/** Définissez l'algorithme test09 afin qu'il affiche 
-	 *  un message de salut à Luke, puis Han et puis Leia.
+	 *  un message de salut à Luke, puis à Han et puis à Leia.
 	 */
 	@Test
 	public void test09() {
-		
+		// TODO
 	}
 	
 }

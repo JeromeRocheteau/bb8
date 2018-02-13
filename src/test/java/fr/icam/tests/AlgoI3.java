@@ -14,6 +14,11 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test01 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>int abs (int x) { ... }</code> : à quoi correspond cette fonction ?
+	 *  3. <code>if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
+	 *  4. <code>return x;</code> : que signifie cette instruction ?
+	 *  5. <code>x < 0</code> : que signifie cette expression ?
+	 *  6. <code>x < 0</code> : quelle est la valeur de cette expression ?
 	 */
 	
 	int abs(int x) {
@@ -34,6 +39,12 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test02 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>x == y<code> : que signifie cette expression ?
+	 *  3. <code>x != y<code> : que signifie cette expression ?
+	 *  4. <code>x < y<code> : que signifie cette expression ?
+	 *  5. <code>x <= y<code> : que signifie cette expression ?
+	 *  6. <code>x > y<code> : que signifie cette expression ?
+	 *  7. <code>x >= y<code> : que signifie cette expression ?
 	 */
 	@Test
 	public void test02() {
@@ -50,6 +61,9 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test03 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>if ( ... ) { ... }</code> : que signifie cette instruction ?
+	 *  3. que se passe-t-il si la condition <code>x == 0</code> est fausse ?
+	 *  4. quelle bonne pratique pouvez-vous en déduire quant à l'utilisation des instructions <code>if ( ... ) { ... }</code> ?
 	 */
 	@Test
 	public void test03() {
@@ -62,6 +76,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test04 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
 	 */
 	@Test
 	public void test04() {
@@ -76,6 +91,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test05 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>if ( ... ) { ... } else if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
+	 *  3. par quelle instruction équivalente pourrait-on la remplacer ? 
 	 */
 	@Test
 	public void test05() {
@@ -92,6 +109,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test06 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>boolean zero(int x) { ... }</code> : à quoi correspond cette fonction ?
+	 *  3. <code>boolean sign(int x) { ... }</code> : à quoi correspond cette fonction ?
 	 */
 	
 	boolean zero(int x) {
@@ -125,6 +144,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test07 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. l'algorithme test07 est-il équivalent à l'algorithme test06 ? justifiez !
 	 */	
 	@Test
 	public void test07() {
@@ -143,6 +163,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test08 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. l'algorithme test08 est-il équivalent aux algorithmes test06 et test07 ? justifiez !
 	 */	
 	@Test
 	public void test08() {
@@ -162,6 +183,9 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test09 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>zero(x) || sign(x)</code> : que signifie cette expression ?
+	 *  3. par quelles instructions équivalentes pourrait-on remplacer 
+	 *     l'instruction <code>if (zero(x) || sign(x)) { ... } else { ... }</code> ? 
 	 */	
 	@Test
 	public void test09() {
@@ -176,6 +200,9 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test10 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. <code>even(x) && even(y)</code> : que signifie cette expression ?
+	 *  3. par quelles instructions équivalentes pourrait-on remplacer 
+	 *     l'instruction <code>if (even(x) && even(y)) { ... } else { ... }</code> ?
 	 */	
 	
 	boolean even(int x) {
