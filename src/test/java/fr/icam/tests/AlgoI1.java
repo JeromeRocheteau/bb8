@@ -4,31 +4,32 @@ import org.junit.Test;
 
 public class AlgoI1 {
 
-	/** L'objectif de ces tests est d'introduire les concepts :
+	/** L'objectif de ces tests est d'introduire :
 	 * 
-	 *  1. de procédure
-	 *  2. de fonction
-	 *  3. d'instruction
-	 *  4. de valeur
-	 *  5. d'appel à une fonction ou une procédure
-	 *  6. de paramètre formel 
-	 *  7. de paramètre réel 
-	 *  8. de variable locale et de variable globale :
-	 *    8.1 déclaration d'une variable 
-	 *    8.2 affectation d'une valeur à une variable 
-	 *    8.3 initialisation d'une variable 
-	 *    8.4 portée d'une variable locale
-	 *    8.5 portée d'une variable globale
+	 *  1. les procédures
+	 *  2. les fonctions
+	 *  3. les instructions
+	 *  4. les valeurs
+	 *  5. les appels à une fonction ou une procédure
+	 *  6. les paramètres formels 
+	 *  7. les paramètres réels 
+	 *  8. les variables locales et les variables globales :
+	 *     8.1 déclaration d'une variable 
+	 *     8.2 affectation d'une valeur à une variable 
+	 *     8.3 initialisation d'une variable 
+	 *     8.4 portée d'une variable locale
+	 *     8.5 portée d'une variable globale
 	 */
 	
 	/** Exécutez l'algorithme test01 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>print("Hello World!");</code> : est-ce une instruction ou une valeur ?
+	 *  2. <code>System.out.print("Hello World!");</code> : est-ce une instruction ou une valeur ?
 	 *  2. <code>"Hello World!"</code> : est-ce une instruction ou une valeur ?
-	 *  3. <code>print(...)</code> : est-ce une fonction ou bien une procédure ?
-	 *  4. <code>("Hello World!")</code> : est-ce un paramètre formel 
-	 *     ou un paramètre réel (argument) de <code>print(...)</code> ?
+	 *  3. <code>System.out.print(...)</code> : est-ce une fonction ou bien une procédure ?
+	 *  4. Quelle sorte de paramètre est le paramètre <code>("Hello World!")</code> dans <code>System.out.print(...)</code> ? 
+	 *     4.1 un paramètre formel 
+	 *     4.2 un paramètre réel
 	 *  5. Comment définir l'algorithme test01 en une phrase ?
 	 */
 	@Test
@@ -40,13 +41,13 @@ public class AlgoI1 {
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
 	 *  2. Le résultat est-il le même que celui de l'algorithme test01 ?
-	 *  3. <code>String</code> : que signifie ce type de données ?
-	 *  4. <code>name</code> : est-ce une variable ou une valeur ?
-	 *  5. <code>"Luke"</code> : est-ce une variable ou une valeur ?
-	 *  6. <code>name = "Luke"</code> : que signifie cette partie de l'instruction ?
-	 *  7. <code>String name</code> : que signifie cette partie de l'instruction ?
-	 *  8. <code>String name = "Luke"</code> : que signifie cette instruction ?
-	 *  9. <code>"Hello" + name</code> : que signifie cette expression ? quelle est la valeur de cette expression ?
+	 *  3. À quoi correspond ce type de données <code>String</code> ?
+	 *  4. À quoi correspond <code>name</code> : est-ce une variable ou une valeur ?
+	 *  5. À quoi correspond <code>"Luke"</code> : est-ce une variable ou une valeur ?
+	 *  6. À quoi correspond l'instruction <code>String name = "Luke"</code> ?
+	 *     6.1. À quoi correspond <code>name = "Luke"</code> ?
+	 *     6.2. À quoi correspond <code>String name</code> ?
+	 *  7. À quoi correspond l'expression <code>"Hello" + name</code> ? Quelle est sa valeur ?
 	 */
 	@Test
 	public void test02() {
@@ -67,7 +68,8 @@ public class AlgoI1 {
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
 	 *  2. Le résultat est-il le même que celui de l'algorithme test02 ?
-	 *  3. <code>String name = luke</code> : que pouvez-vous en déduire quant aux instructions d'affectation et quant aux valeurs ?
+	 *  3. Que pouvez-vous en déduire quant aux instructions d'affectation et quant aux valeurs 
+	 *     à partir du cas de l'instruction <code>String name = luke;</code> ?
 	 */
 	@Test
 	public void test04() {
@@ -80,11 +82,13 @@ public class AlgoI1 {
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
 	 *  2. Le résultat est-il le même que celui de l'algorithme test02 ?
-	 *  3. <code>hello(name);</code> : que signifie cette instruction ?
-	 *  4. <code>void hello(String name) { ... }</code> : est-ce une procédure ou une fonction ?
-	 *  5. <code>void</code> : que signifie ce type de données ?
-	 *  6. <code>hello(String name)</code> : <code>name</code> est-il un paramètre formel ou un paramètre réel ? 
-	 *  7. Quel est l'intérêt d'avoir séparé l'algorithme <code>hello</code> de l'algorithme <code>test05</code> ? 
+	 *  3. À quoi correspond l'instruction <code>hello(name);</code> ?
+	 *  4. À quoi correspond <code>void hello(String name) { ... }</code> : est-ce une procédure ou une fonction ?
+	 *  5. À quoi correspond le type de données <code>void</code> ?
+	 *  6. Quelle sorte de paramètre est le paramètre <code>name</code> dans <code>hello(String name)</code> ? 
+	 *     6.1. un paramètre formel 
+	 *     6.2. un paramètre réel 
+	 *  7. Quel est l'intérêt d'avoir extrait l'algorithme <code>hello</code> de l'algorithme <code>test05</code> ? 
 	 */
 
 	void hello(String name) {
@@ -101,8 +105,10 @@ public class AlgoI1 {
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
 	 *  2. Le résultat est-il le même que celui de l'algorithme test02 ?
-	 *  3. <code>String luke = "Luke";</code> : que signifie cette instruction ?
-	 *  4. <code>luke</code> : est-ce une variable locale ou une variable globale ?
+	 *  3. À quoi correspond l'instruction <code>String luke = "Luke";</code> ?
+	 *  4. Quelle sorte de variable est la variable <code>luke</code> ?
+	 *     4.1. une variable locale 
+	 *     4.2. une variable globale 
 	 *  5. Quelle est la différence entre une variable locale et une variable globale ?
 	 *  6. Quelle est la différence avec l'algorithme test02 ?
 	 */
@@ -118,10 +124,11 @@ public class AlgoI1 {
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
 	 *  2. Le résultat est-il le même que celui de l'algorithme test02 ?
-	 *  3. <code>String luke() { ... }</code> : est-ce une procédure ou une fonction ?
-	 *  4. <code>return "Luke";</code> : que signifie cette instruction ?
-	 *  5. <code>String name = luke();</code> : que signifie cette instruction ?
-	 *  6. <code>String name = luke</code> : que pouvez-vous en déduire quant aux instructions d'affectation et quant aux valeurs ?
+	 *  3. À quoi correspond <code>String luke() { ... }</code> : est-ce une procédure ou une fonction ?
+	 *  4. À quoi correspond l'instruction <code>return "Luke";</code> ?
+	 *  5. À quoi correspond l'instruction <code>String name = luke();</code> ?
+	 *  6. Que pouvez-vous en déduire quant aux instructions d'affectation et quant aux valeurs 
+	 *     à partir du cas de l'instruction <code>String name = luke();</code> ?
 	 *  7. Quelle est la différence entre une procédure et une fonction ?
 	 *  8. Quelle est la différence avec l'algorithme test06 ?
 	 */

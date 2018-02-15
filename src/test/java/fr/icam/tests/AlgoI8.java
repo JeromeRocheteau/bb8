@@ -7,6 +7,13 @@ import org.junit.Test;
 
 public class AlgoI8 {
 
+	/** L'objectif de ces tests est d'introduire :
+	 * 
+	 *  1. les structures de données récursives
+	 *  2. les structures de listes chaînées
+	 *  3. les structures de données paramétrées
+	 */
+	
 	class list<T> {	
 		T head;
 		list<T> tail;

@@ -4,18 +4,18 @@ import org.junit.Test;
 
 public class AlgoI4 {
 
-	/** L'objectif de ces tests est d'introduire les concepts :
+	/** L'objectif de ces tests est d'introduire :
 	 * 
-	 *  1. de boucles for et while
-	 *  2. de fonctions ou procédures récursives
+	 *  1. les boucles <code>for</code> et <code>while</code>
+	 *  2. les fonctions ou procédures récursives
 	 */
 
 	/** Exécutez l'algorithme test01 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>while ( ... ) { ... }</code> : que signifie cette instruction ?
-	 *  3. <code>i < 5</code> : que signifie cette expression ?
-	 *  4. <code>i++</code> : que signifie cette expression/instruction ?
+	 *  2. À quoi correspondent l'instruction <code>while ( ... ) { ... }</code> ?
+	 *  3. À quoi correspondent l'expression <code>i < 5</code> ?
+	 *  4. À quoi correspond l'instruction <code>i++</code> ?
 	 */
 	@Test
 	public void test01() {
@@ -29,9 +29,9 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test02 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. l'aglorithm test02 est-il équivalent à l'algorithme test01 ?
-	 *  3. <code>for ( ... ) { ... }</code> : que signifie cette instruction ?
-	 *  4. <code>int i = 0; i < 5; i++</code> : que signifie ces instructions/expressions ?
+	 *  2. L'aglorithme test02 est-il équivalent à l'algorithme test01 ?
+	 *  3. À quoi correspondent l'instruction <code>for ( ... ) { ... }</code> ?
+	 *  4. À quoi correspondent les instructions <code>int i = 0; i < 5; i++</code> ?
 	 */
 	@Test
 	public void test02() {
@@ -43,9 +43,10 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test03 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. l'aglorithm test03 est-il équivalent aux algorithmes test01 et test02 ?
-	 *  3. quelle différence d'utilisation y a-t-il entre les instructions 
-	 *      <code>while (...) { ... }</code> et <code>do { ... } while (...)</code> ? 
+	 *  2. L'aglorithme test03 est-il équivalent aux algorithmes test01 et test02 ?
+	 *  3. Quelle est la différence d'utilisation entre les instructions suivantes ?
+	 *     3.1. <code>while (...) { ... }</code> 
+	 *     3.2. <code>do { ... } while (...)</code>
 	 */
 	@Test
 	public void test03() {
@@ -59,9 +60,9 @@ public class AlgoI4 {
 	/** Exécutez l'algorithme test04 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. l'aglorithm test04 est-il équivalent aux algorithmes test01, test02 et test03 ?
-	 *  3. <code>void recursive(int i)</code> : à quoi correspond cette procédure ?
-	 *  4. pourquoi s'agit-il d'une procédure dite récursive ? 
+	 *  2. L'aglorithme test04 est-il équivalent aux algorithmes test01, test02 et test03 ?
+	 *  3. À quoi correspond cette procédure <code>void recursive(int i)</code> ?
+	 *  4. Pourquoi s'agit-il d'une procédure dite récursive ? 
 	 */
 	
 	void recursive(int i) {

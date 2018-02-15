@@ -4,15 +4,25 @@ import org.junit.Test;
 
 public class AlgoI6 {
 
-	/** L'objectif de ces tests est d'introduire les concepts de :
+	/** L'objectif de ces tests est d'introduire :
 	 * 
-	 *  1. structures de données
-	 *  2. tableaux
+	 *  1. les structures de données
 	 */
 
-	/** Exécutez l'algorithme test01 :
+	/** Exécutez l'algorithme <code>test01</code> :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. À quoi correspond l'instruction <code>point a = create();</code> 
+	 *     dans l'algorithme <code>test01()</code> ?
+	 *  3. À quoi correspond l'instruction <code>point b = create(0,0);</code> 
+	 *     dans l'algorithme <code>test01()</code> ?
+	 *  4. À quoi correspond l'instruction <code>point p = new point();</code> 
+	 *     dans les algorithmes <code>create()</code> et <code>create(int x,int y)</code> ?
+	 *  5. Quelle est la différence entre les algorithmes <code>create()</code> et <code>create(int x,int y)</code> ?
+	 *  6. À quoi correspond l'instruction <code>p.x = x;</code> dans l'algorithme <code>create(int x,int y)</code> ?
+	 *  7. À quoi correspond la déclaration <code>class point { int x; int y; }</code> ?
+	 *  8. À quoi correspond l'instruction <code>int x;</code> dans <code>class point { int x; int y; }</code> ?
+	 *  9. Quelle est la différence entre un type de données et une structure de données ?
 	 */	
 	
 	class point {
@@ -40,9 +50,18 @@ public class AlgoI6 {
 		System.out.println("b = " + "(" + b.x + "," + b.y + ")");
 	}
 	
-	/** Exécutez l'algorithme test02 :
+	/** Exécutez l'algorithme <code>test02</code> :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. À quoi corrspond l'instruction <code>point d = a;</code> ?
+	 *  3. À quoi corrspond la fonction <code>boolean eq(point a, point b)</code> ?
+	 *  4. À quoi corrspond la fonction <code>boolean neq(point a, point b)</code> ?
+	 *  5. À quoi corrspond la fonction <code>boolean lt(point a, point b)</code> ?
+	 *  6. À quoi corrspond la fonction <code>boolean lte(point a, point b)</code> ?
+	 *  7. À quoi corrspond la fonction <code>boolean gt(point a, point b)</code> ?
+	 *  8. À quoi corrspond la fonction <code>boolean gte(point a, point b)</code> ?
+	 *  9. Quel est l'intérêt de manipuler des structures de données 
+	 *     comme la structure de données <code>point</code> ?
 	 */	
 	
 	boolean eq(point a, point b) {
@@ -125,7 +144,7 @@ public class AlgoI6 {
 		System.out.println("c <= d: " + lte(c,d));
 	}
 
-	/** Complétez l'algorithme test03 afin qu'il affiche 
+	/** Complétez l'algorithme <code>test03</code> afin qu'il affiche 
 	 *  les segments de droite sous la forme (1,2) -- (2,1)
 	 *  si le point a vaut (1,2) et le point b vaut (2,1).  
 	 */	
@@ -140,7 +159,7 @@ public class AlgoI6 {
 		// TODO
 	}
 	
-	/** Complétez l'algorithme test04 afin qu'il calcule  
+	/** Complétez l'algorithme <code>test04</code> afin qu'il calcule  
 	 *  si deux segments de droite sont égaux.
 	 */	
 	
@@ -149,17 +168,17 @@ public class AlgoI6 {
 		// TODO
 	}
 	
-	/** Complétez l'algorithme test05 afin qu'il affiche des polygônes d'ordre variable.
+	/** Complétez l'algorithme <code>test05</code> afin qu'il affiche des polygônes d'ordre variable.
 	 *  Un polygône est une suite cyclique de segments de droite consécutifs, 
 	 *  L'ordre d'un polygone est le nombre de ses côtés.
 	 *  
-	 *  L'algorithme test5 doit également afficher l'ensemble des sommets du polygône affiché.  
+	 *  L'algorithme <code>test05</code> doit également afficher l'ensemble des sommets du polygône affiché.  
 	 *  
 	 *  Un polygône sera affiché sous la forme (1,2) -- (2,1) -- (5,3) -- (1,2)   
 	 *  si, par exemple, il s'agit d'un triangle le premier segment vaut (1,2) -- (2,1), 
 	 *  le deuxième segment vaut (2,1) -- (5,3) et le dernier segment vaut (5,3) -- (1,2).
 	 *  
-	 *  L'ensemble des sommets des polygône sera affiché sous la forme { (1,2) , (2,1) , (5,3) } 
+	 *  L'ensemble des sommets d'un polygône sera affiché sous la forme { (1,2) , (2,1) , (5,3) } 
 	 *  en utilisant une fonction auxiliaire qui retourne l'ensemble des sommets d'une polygône.  
 	 */	
 	

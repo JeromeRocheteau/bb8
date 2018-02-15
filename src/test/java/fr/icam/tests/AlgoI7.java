@@ -6,19 +6,29 @@ import org.junit.Test;
 
 public class AlgoI7 {
 
-	/** L'objectif de ces tests est d'introduire les concepts :
+	/** L'objectif de ces tests est d'introduire :
 	 * 
 	 *  1. les énumérations
 	 *  2. les tableaux à deux dimensions
 	 *  3. les valeurs indéfinies
 	 */
 
-	/** Exécutez l'algorithme test01 :
+	/** Exécutez l'algorithme <code>test01</code> :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
+	 *  2. À quoi correspond la procédure <code>void init()</code> ?
+	 *  3. À quoi correspond la procédure <code>void display()</code> ?
+	 *     3.1. À quoi correspond la procédure <code>void head()</code> ?
+	 *     3.2. À quoi correspond la procédure <code>void board()</code> ?
+	 *  4. À quoi correspond la procédure <code>void play(int i, int j, state next)</code> ?
+	 *  5. À quoi correspond le tableau <code>state[][] tictactoe</code> ?
+	 *  6. À quoi correspond le type de données <code>state</code> ?
+	 *  7. À quoi correspond la déclaration <code>enum state {cross, nought};</code> ?
+	 *  8. À quoi correspond l'expression <code>s == cross</code> dans l'algorithme <code>board</code>?
+	 *  9. À quoi correspond l'instruction <code>tictactoe[i][j] = next;</code> dans l'algorithme <code>play</code>?
 	 */
 	
-	enum state {Cross, Nought};
+	enum state {cross, nought};
 	
 	state[][] tictactoe;
 	
@@ -42,9 +52,9 @@ public class AlgoI7 {
 				System.out.print("\t");
 				if (s == null) {
 					System.out.print("-");
-				} else if (s == state.Cross) {
+				} else if (s == state.cross) {
 					System.out.print("x");
-				} else if (s == state.Nought) {
+				} else if (s == state.nought) {
 					System.out.print("o");
 				}
 			}
@@ -73,28 +83,31 @@ public class AlgoI7 {
 	public void test01() {
 		init();
 		display();
-		play(1, 1, state.Cross);
+		play(1, 1, state.cross);
 		display();
-		play(0, 0, state.Nought);
+		play(0, 0, state.nought);
 		display();
-		play(2, 2, state.Cross);
+		play(2, 2, state.cross);
 		display();
-		play(0, 2, state.Nought);
+		play(0, 2, state.nought);
 		display();
-		play(0, 1, state.Cross);
+		play(0, 1, state.cross);
 		display();
-		play(2, 1, state.Nought);
+		play(2, 1, state.nought);
 		display();
-		play(1, 0, state.Cross);
+		play(1, 0, state.cross);
 		display();
-		play(2, 0, state.Nought);
+		play(2, 0, state.nought);
 		display();
-		play(1, 2, state.Cross);
+		play(1, 2, state.cross);
 		display();
 	}
 
-	/** Améliorez l'algorithme test02 afin qu'il détecte automatiquement 
-	 *  quand une partie est terminée. 
+	/** Améliorez l'algorithme <code>test02</code> afin qu'il détecte 
+	 *  automatiquement quand une partie est terminée c'est-à-dire 
+	 *  qu'il stoppe la partie :
+	 *  1. ou bien dès qu'un joueur est gagnant  
+	 *  2. ou bien dès qu'il n'y a plus de coups à jouer. 
 	 */
 
 	class move {
@@ -105,7 +118,7 @@ public class AlgoI7 {
 	
 	move read(boolean cross) throws Exception {
 		move m = new move();
-		m.s = cross ? state.Cross : state.Nought;	
+		m.s = cross ? state.cross : state.nought;	
 		System.out.println("player: " + (cross ? "x" : "o"));
 		System.out.print("row: ");
 		m.x = scanner.nextInt();

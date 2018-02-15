@@ -4,21 +4,21 @@ import org.junit.Test;
 
 public class AlgoI3 {
 
-	/** L'objectif de ces tests est d'introduire les concepts :
+	/** L'objectif de ces tests est d'introduire :
 	 * 
-	 *  1. de comparaison sur les entiers
-	 *  2. d'expressions et de valeurs booléennes
-	 *  3. d'instructions conditionnelles
+	 *  1. les opérateurs de comparaison sur les entiers
+	 *  2. les expressions et de valeurs booléennes
+	 *  3. les instructions conditionnelles
 	 */
 	
 	/** Exécutez l'algorithme test01 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>int abs (int x) { ... }</code> : à quoi correspond cette fonction ?
-	 *  3. <code>if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
-	 *  4. <code>return x;</code> : que signifie cette instruction ?
-	 *  5. <code>x < 0</code> : que signifie cette expression ?
-	 *  6. <code>x < 0</code> : quelle est la valeur de cette expression ?
+	 *  2. À quoi correspond la fonction <code>int abs (int x) { ... }</code> ?
+	 *  3. À quoi correspond l'instruction <code>if ( ... ) { ... } else { ... }</code> ?
+	 *  4. À quoi correspond l'instruction <code>return x;</code> ?
+	 *  5. À quoi correspond l'expression <code>x < 0</code> ?
+	 *  6. Quelle est la valeur de l'expression <code>x < 0</code> ?
 	 */
 	
 	int abs(int x) {
@@ -39,12 +39,12 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test02 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>x == y<code> : que signifie cette expression ?
-	 *  3. <code>x != y<code> : que signifie cette expression ?
-	 *  4. <code>x < y<code> : que signifie cette expression ?
-	 *  5. <code>x <= y<code> : que signifie cette expression ?
-	 *  6. <code>x > y<code> : que signifie cette expression ?
-	 *  7. <code>x >= y<code> : que signifie cette expression ?
+	 *  2. À quoi correspond l'expression <code>x == y<code> ?
+	 *  3. À quoi correspond l'expression <code>x != y<code> ?
+	 *  4. À quoi correspond l'expression <code>x < y<code> ?
+	 *  5. À quoi correspond l'expression <code>x <= y<code> ?
+	 *  6. À quoi correspond l'expression <code>x > y<code> ?
+	 *  7. À quoi correspond l'expression <code>x >= y<code> ?
 	 */
 	@Test
 	public void test02() {
@@ -61,9 +61,9 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test03 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>if ( ... ) { ... }</code> : que signifie cette instruction ?
-	 *  3. que se passe-t-il si la condition <code>x == 0</code> est fausse ?
-	 *  4. quelle bonne pratique pouvez-vous en déduire quant à l'utilisation des instructions <code>if ( ... ) { ... }</code> ?
+	 *  2. À quoi correspond l'instruction <code>if ( ... ) { ... }</code> ?
+	 *  3. Sue se passe-t-il si la condition <code>x == 0</code> est fausse ?
+	 *  4. Quelle bonne pratique pouvez-vous en déduire quant à l'utilisation des instructions <code>if ( ... ) { ... }</code> ?
 	 */
 	@Test
 	public void test03() {
@@ -76,7 +76,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test04 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
+	 *  2. À quoi correspond l'instruction <code>if ( ... ) { ... } else { ... }</code> ?
 	 */
 	@Test
 	public void test04() {
@@ -91,8 +91,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test05 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>if ( ... ) { ... } else if ( ... ) { ... } else { ... }</code> : que signifie cette instruction ?
-	 *  3. par quelle instruction équivalente pourrait-on la remplacer ? 
+	 *  2. À quoi correspond l'instruction <code>if ( ... ) { ... } else if ( ... ) { ... } else { ... }</code> ?
+	 *  3. Par quelle instruction équivalente pourrait-on la remplacer ? 
 	 */
 	@Test
 	public void test05() {
@@ -109,8 +109,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test06 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>boolean zero(int x) { ... }</code> : à quoi correspond cette fonction ?
-	 *  3. <code>boolean sign(int x) { ... }</code> : à quoi correspond cette fonction ?
+	 *  2. À quoi correspond la fonction <code>boolean zero(int x) { ... }</code> ?
+	 *  3. À quoi correspond la fonction <code>boolean sign(int x) { ... }</code> ?
 	 */
 	
 	boolean zero(int x) {
@@ -144,7 +144,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test07 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. l'algorithme test07 est-il équivalent à l'algorithme test06 ? justifiez !
+	 *  2. L'algorithme test07 est-il équivalent à l'algorithme test06 ? justifiez !
 	 */	
 	@Test
 	public void test07() {
@@ -163,7 +163,7 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test08 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. l'algorithme test08 est-il équivalent aux algorithmes test06 et test07 ? justifiez !
+	 *  2. L'algorithme test08 est-il équivalent aux algorithmes test06 et test07 ? justifiez !
 	 */	
 	@Test
 	public void test08() {
@@ -183,8 +183,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test09 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>zero(x) || sign(x)</code> : que signifie cette expression ?
-	 *  3. par quelles instructions équivalentes pourrait-on remplacer 
+	 *  2. À quoi correspond l'expression <code>zero(x) || sign(x)</code> ?
+	 *  3. Par quelles instructions équivalentes pourrait-on remplacer 
 	 *     l'instruction <code>if (zero(x) || sign(x)) { ... } else { ... }</code> ? 
 	 */	
 	@Test
@@ -200,8 +200,8 @@ public class AlgoI3 {
 	/** Exécutez l'algorithme test10 :
 	 * 
 	 *  1. Quel est le résultat produit par cet algorithme ?
-	 *  2. <code>even(x) && even(y)</code> : que signifie cette expression ?
-	 *  3. par quelles instructions équivalentes pourrait-on remplacer 
+	 *  2. À quoi correspond l'expression <code>even(x) && even(y)</code> ?
+	 *  3. Par quelles instructions équivalentes pourrait-on remplacer 
 	 *     l'instruction <code>if (even(x) && even(y)) { ... } else { ... }</code> ?
 	 */	
 	
