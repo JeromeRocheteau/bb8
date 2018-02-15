@@ -1,4 +1,4 @@
-# BB-8: Map to Skywalker
+# BB-8
 
 Ce dépôt contient un ensemble de ressources pour un module d'apprentissage par problèmes (problem-based learning) 
 pour l'enseignement de l'algorithmique et de la programmation impérative.    
