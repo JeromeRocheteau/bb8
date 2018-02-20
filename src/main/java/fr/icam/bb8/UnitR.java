@@ -12,7 +12,7 @@ public class UnitR {
 	double[] minors;
 	long[][] navmaps;
 
-	private void init() {
+	void init() {
 		systems = new long[359];
 		namings = new String[359];
 		centers = new double[359];
@@ -47,15 +47,6 @@ public class UnitR {
 		}
 		return -1;
 	}
-
-	int index(String name) {
-		for (int i = 0; i < systems.length; i++) {
-			if (namings[i].equalsIgnoreCase(name)) {
-				return i;
-			}
-		}
-		return -1;
-	}
 	
 	void load() throws Exception {
 		InputStream input = UnitR.class.getResourceAsStream("/navmaps.csv");
@@ -81,37 +72,51 @@ public class UnitR {
 		load();		
 	}
 
-	private void loop() {
+	int index(String name) {
+		for (int i = 0; i < namings.length; i++) {
+			if (namings[i].equalsIgnoreCase(name)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	int ask(Scanner scanner, String text) {
+		int s = -1;
+		do {
+			System.out.print(text);
+			String source = scanner.nextLine();
+			s = index(source);
+		} while (s == -1);
+		return s;
+	}
+
+	void route(Scanner scanner) {
+		int s = ask(scanner, "from? ");
+		int t = ask(scanner, "to? ");
+		String src = namings[s];
+		String tgt = namings[t];
+		long duration = navmaps[s][t];
+		if (duration == 0) {
+			System.out.println("there is no direct route from " + src + " to " + tgt + ".");
+		} else {
+			System.out.println("the direct route from " + src + " to " + tgt + " takes " + duration + "ms.");
+		}
+	}
+
+	void loop() {
 		System.out.println("hello! my name is <r-unit> and i'm ready.");
 		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			System.out.print("what do you want? ");
+		boolean exit = false;
+		while (exit == false) {
+			System.out.print("what are you asking for? ");
 			String line  = scanner.nextLine();
 			if (line.equalsIgnoreCase("exit")) {
-				break;
+				exit = true;
 			} else if (line.equalsIgnoreCase("route")) {
-				int s = -1;
-				do {
-					System.out.print("from? ");
-					String source = scanner.nextLine();
-					s = index(source);
-				} while (s == -1);
-				int t = -1;
-				do {
-					System.out.print("to? ");
-					String target = scanner.nextLine();
-					t = index(target);
-				} while (t == -1);
-				String src = namings[s];
-				String tgt = namings[t];
-				long duration = navmaps[s][t];
-				if (duration == 0) {
-					System.out.println("there is no route from " + src + " to " + tgt + ".");
-				} else {
-					System.out.println("the direct route from " + src + " to " + tgt + " takes " + duration + "ms.");
-				}
+				route(scanner);
 			} else {
-				System.out.println("\nsorry, i don't understand your request.");
+				System.out.println("sorry, i don't understand your request.");
 			}
 		}
 		System.out.println("bye!");
@@ -124,7 +129,8 @@ public class UnitR {
 	}
 	
 	public static void main(String[] arguments) throws Exception {
-		(new UnitR()).process();
+		UnitR unit = new UnitR();
+		unit.process();
 	}
 	
 }

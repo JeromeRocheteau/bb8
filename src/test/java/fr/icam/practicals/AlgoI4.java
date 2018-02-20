@@ -1,4 +1,4 @@
-package fr.icam.tests;
+package fr.icam.practicals;
 
 import org.junit.Test;
 
