@@ -7,36 +7,28 @@ public class UnitR {
 
 	long[] systems;
 	String[] namings;
-	double[] centers;
-	double[] majors;
-	double[] minors;
 	long[][] navmaps;
 
 	void init() {
 		systems = new long[359];
 		namings = new String[359];
-		centers = new double[359];
-		majors = new double[359];
-		minors = new double[359];
 		navmaps = new long[359][359];
 	}
 	
-	void read() throws Exception {
-		InputStream input = UnitR.class.getResourceAsStream("/systems.csv");
+	int read(String name, int index) throws Exception {
+		InputStream input = UnitR.class.getResourceAsStream("/" + (name == null ? "" : name + "-") + "systems.csv");
 		Scanner scanner = new Scanner(input);
-		int i = 0;
+		int i = index;
 		while (scanner.hasNextLine()) {
 			String line = scanner.nextLine();
 			String[] items = line.split(",");
 			systems[i] = Long.valueOf(items[0]).longValue();
 			namings[i] = items[1];
-			centers[i] = Double.valueOf(items[2]).doubleValue();
-			majors[i] = Double.valueOf(items[3]).doubleValue();
-			minors[i] = Double.valueOf(items[4]).doubleValue();
 			i++;
 		}
 		scanner.close();
 		input.close();
+		return i;
 	}
 	
 	int index(long id) {
@@ -48,8 +40,8 @@ public class UnitR {
 		return -1;
 	}
 	
-	void load() throws Exception {
-		InputStream input = UnitR.class.getResourceAsStream("/navmaps.csv");
+	void load(String name) throws Exception {
+		InputStream input = UnitR.class.getResourceAsStream("/" + (name == null ? "" : name + "-") + "navmaps.csv");
 		Scanner scanner = new Scanner(input);
 		while (scanner.hasNextLine()) {
 			String line = scanner.nextLine();
@@ -59,22 +51,29 @@ public class UnitR {
 			long effort = Long.valueOf(items[2]).longValue();
 			int i = index(source);
 			int j = index(target);
-			navmaps[i][j] = effort;
-			navmaps[j][i] = effort;
+			if (i == -1 || j == -1) {
+				System.err.println("skiping " + source + " -> " + target + " (" + effort + ")");
+			} else {
+				navmaps[i][j] = effort;
+				navmaps[j][i] = effort;
+			}
 		}
 		scanner.close();
 		input.close();
 	}
 	
-	void setup() throws Exception {
+	void setup(String name) throws Exception {
 		init();
-		read();
-		load();		
+		read(name, 0);
+		load(name);		
 	}
 
 	int index(String name) {
 		for (int i = 0; i < namings.length; i++) {
-			if (namings[i].equalsIgnoreCase(name)) {
+			String source = namings[i];
+			if (source == null) {
+				continue;
+			} else if (source.equalsIgnoreCase(name)) {
 				return i;
 			}
 		}
@@ -87,6 +86,9 @@ public class UnitR {
 			System.out.print(text);
 			String source = scanner.nextLine();
 			s = index(source);
+			if (s == -1) {
+				System.out.println("sorry, i don't know " + source + ".");
+			}
 		} while (s == -1);
 		return s;
 	}
@@ -104,8 +106,26 @@ public class UnitR {
 		}
 	}
 
-	void loop() {
-		System.out.println("hello! my name is <r-unit> and i'm ready.");
+	void list(Scanner scanner) {
+		System.out.print("filtering on: ");
+		String filter = scanner.nextLine();
+		for (int i = 0; i < namings.length; i++) {
+			if (namings[i] == null) {
+				continue;
+			} else {
+				long id = systems[i];
+				String pattern = namings[i].toLowerCase();
+				String prefix = filter.toLowerCase();
+				if (pattern.startsWith(prefix)) {
+					System.out.println("  - " + namings[i] + " (" + id + ")");
+					
+				}				
+			}
+		}
+	}
+	
+	void loop(String name) {
+		System.out.println("hello! my name is " + name + " and i'm ready.");
 		Scanner scanner = new Scanner(System.in);
 		boolean exit = false;
 		while (exit == false) {
@@ -113,6 +133,8 @@ public class UnitR {
 			String line  = scanner.nextLine();
 			if (line.equalsIgnoreCase("exit")) {
 				exit = true;
+			} else if (line.equalsIgnoreCase("list")) {
+				list(scanner);
 			} else if (line.equalsIgnoreCase("route")) {
 				route(scanner);
 			} else {
@@ -123,14 +145,14 @@ public class UnitR {
 		scanner.close();
 	}
 	
-	void process() throws Exception {
-		setup();
-		loop();
+	void process(String name) throws Exception {
+		setup(name);
+		loop(name);
 	}
 	
 	public static void main(String[] arguments) throws Exception {
 		UnitR unit = new UnitR();
-		unit.process();
+		unit.process("bb8");
 	}
 	
 }
